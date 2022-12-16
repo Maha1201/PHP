@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+</head>
+<body>
+    
+    <div>
+
+        <h2>Contact</h2>
+        <hr>
+
+        <div>* Ces zones sont obligatoires</div>
+        <br>
+
+
+        <!--Début du formulaire -->
+        <form action="http://127.0.0.1:8080/Formulaires/Formulaire.php" method="post" id="formulaire">
+
+            <!--Premier cadre-->
+            <fieldset>
+
+                <legend>Vos coordonnées</legend>
+                <br>
+    
+                <label for="nom">Votre nom* : </label><input type="text" name="nom" id="nom">
+                <span id="nom_m"></span>
+                <br>
+                <label for="prénom">Votre prénom* : </label><input type="text" name="prenom" id="prenom">
+                <span id="prenom_m"></span>
+                <br><br>
+    
+                <div>Sexe* :
+                <input type="radio" name="sexe" value="féminin" id="feminin" checked> Féminin
+                <input type="radio" name="sexe" value="masculin" id="masculin"> Masculin
+                <span id="sexe"></span>
+
+                </div>
+                <br>
+    
+                <label for="date">Date de naissance* :</label><input type="date" name="ddn" id="date">
+                <span id="date_m"></span>
+    
+                <br>
+                <label for="codepostal">Code postal* : </label><input type="text" name="codepostal" id="codepostal">
+                <span id="cp_m"></span>
+                <br>
+                <label for="adresse">Adresse : </label><input type="text" name="adresse" id="adresse">
+                <br>
+                <label for="ville">Ville : </label><input type="text" name="ville" id="ville">
+                <br>
+                <label for="email">Email* : </label><input type="text" name="email" id="email" placeholder="dave.loper@afpa.fr">
+                <span id="email_m"></span>
+
+            </fieldset>
+
+            <br>
+            <br>
+    
+            <!--Deuxième cadre-->
+            <fieldset>
+                <legend>Votre demande</legend>
+        
+                <br>
+                <label for="sujet">Sujet* : </label>
+                <select id="sujet" name="sujet">
+                    <option value="selection" disabled>Veuillez séléctionner un sujet</option>
+                    <option value="commande">Mes commandes</option>
+                    <option value="question">Question sur un produit</option>
+                    <option value="reclamation">Réclamation</option>
+                    <option value="autres">Autres</option>
+                </select>
+                <br>
+                <span id="sujet_m"></span><br>
+                <div>
+                    Votre question* :<textarea name="commentaire" rows="2" cols="25" id="commentaire"></textarea>
+                </div>
+                <span id="commentaire_m"></span>
+
+            </fieldset>
+
+            <br>
+            <br>
+            
+            <!--Boutons envoyer et annuler-->
+            <div><input type="checkbox" name="accepter" value="accepter" id="accepter"> * J'accepte le traitement informatique de ce formulaire</div>
+            <span id="accepter_m"></span>
+            <br>
+    
+            <input type="submit" value="Envoyer" id="envoyer"> <input type="reset" value="Annuler">
+        
+        </form>
+    </div>
+
+
+</body>
+</html>
