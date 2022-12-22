@@ -16,13 +16,13 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="discs.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PDO - Ajout</title>
+    <title>Disque Ajout</title>
 </head>
 <body>
 
     <h1 class="p-2">Ajouter un vinyle</h1>
 
-    <form action ="" method="post" class="p-2">
+    <form action ="script_disc_ajout.php" method="post" class="p-2">
 
         <label for="label_title">Title</label><br>
         <input type="text" name="title" id="label_title" placeholder="Enter title">
@@ -32,7 +32,7 @@
         <select name="artist" id="label_artist">
 
         <?php foreach ($tableauD as $disc): ?>
-            <option value="<?= $disc->artist_name ?>"><?= $disc->artist_name ?></option>
+            <option value="<?= $disc->artist_id ?>"><?= $disc->artist_name ?></option>
         <?php endforeach; ?>
 
         </select>
@@ -54,12 +54,13 @@
         <input type="text" name="price" id="label_price">
         <br><br>
 
-        <label for="fileToUpload">Picture</label>
-        <input type="file" name="fileToUpload" id="fileToUpload">
+        <label for="picture">Picture</label>
+        <input type="file" name="picture" id="picture">
         <br><br>
 
-        <a href="discs.php"><button class="btn btn-danger">Ajouter</button></a>  
-        <a href="discs.php"><button class="btn btn-danger">Retour</button></a>
+        <button class="btn btn-danger">Ajouter</button> 
+        <a href="discs.php" class="btn btn-danger">Retour</a>
+
 
     </form>
     
