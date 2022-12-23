@@ -21,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="discs.css">
-    <title>Détails</title>
+    <title>Modifications</title>
 </head>
 <body>
 
@@ -40,27 +40,27 @@
             <input type="hidden" name="id" value="<?= $tableauD->artist_id ?>">
 
             <label for="label_title2">Title</label><br>
-            <input type="text" name="title" id="label_title2" value=" <?= $tableauD->disc_title ?>" disabled>
+            <input type="text" name="title" id="label_title2" value="<?= $tableauD->disc_title ?>">
             <br><br>
 
             <label for="label_artist2">Artist</label><br>
-            <input type="text" name="artist" id="label_artist2" value=" <?= $tableauD->artist_name ?>" disabled>
+            <input type="text" name="artist" id="label_artist2" value="<?= $tableauD->artist_name ?>">
             <br><br>
 
             <label for="label_year2">Year</label><br>
-            <input type="text" name="year" id="label_year2" value=" <?= $tableauD->disc_year ?>" disabled>
+            <input type="text" name="year" id="label_year2" value="<?= $tableauD->disc_year ?>">
             <br><br>
 
             <label for="label_genre2">Genre</label><br>
-            <input type="text" name="genre" id="label_genre2" value=" <?= $tableauD->disc_genre ?>" disabled>
+            <input type="text" name="genre" id="label_genre2" value="<?= $tableauD->disc_genre ?>">
             <br><br>
 
             <label for="label_label2">Label</label><br>
-            <input type="text" name="label" id="label_label2" value=" <?= $tableauD->disc_label ?>" disabled>
+            <input type="text" name="label" id="label_label2" value="<?= $tableauD->disc_label ?>">
             <br><br>
 
             <label for="label_price2">Price</label><br>
-            <input type="text" name="price" id="label_price2" value=" <?= $tableauD->disc_price ?>" disabled>
+            <input type="text" name="price" id="label_price2" value="<?= $tableauD->disc_price ?>">
             <br><br>
 
             <p>Picture</p>
@@ -70,9 +70,8 @@
             <br><br>
 
             <div class="d-flex justify-content-center">
-            <a href="disc_form.php?id=<?= $tableauD->disc_id?>" class="btn btn-rose m-2">Modifier</a>
-            <a href="disc_form.php" class="btn btn-rose m-2">Supprimer</a>
-            <a href="discs.php" class="btn btn-rose m-2">Annuler</a>
+            <a href="disc_form.php" class="btn btn-rose m-2">Modifier</a>
+            <a href="disc_detail.php?id=<?= $tableauD->disc_id?>" class="btn btn-rose m-2">Retour</a>
             </div>
             <br><br>
             

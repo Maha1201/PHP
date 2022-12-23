@@ -58,8 +58,8 @@
         <input type="file" name="picture" id="picture">
         <br><br>
 
-        <button class="btn btn-danger">Ajouter</button> 
-        <a href="discs.php" class="btn btn-danger">Retour</a>
+        <button class="btn btn-rose">Ajouter</button> 
+        <a href="discs.php" class="btn btn-rose">Retour</a>
 
 
     </form>
