@@ -1,14 +1,10 @@
 <?php
     require "db.php";
-    $db = connexionBase();
+    $db = ConnexionBase();
 
-    $id = $_GET["id"];
-
-    $requete = $db->prepare("SELECT * FROM disc JOIN artist ON disc.artist_id = artist.artist_id WHERE disc.disc_id=?");
-    $requete->execute(array($id));
-
+    $requete = $db->prepare("SELECT * FROM disc JOIN artist ON disc.artist_id = artist.artist_id WHERE disc_id=?;");
+    $requete->execute(array($_GET["id"]));
     $tableauD = $requete->fetch(PDO::FETCH_OBJ);
-
     $requete->closeCursor();
 ?>
 
@@ -35,42 +31,44 @@
     <br>
 
     <div class="d-flex justify-content-center">
-        <form action ="" method="post">
+        <form action ="script_disc_modif.php" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" name="id" value="<?= $tableauD->artist_id ?>">
+            <input type="text" name="id" value="<?=$tableauD->disc_id?>" hidden>
 
-            <label for="label_title2">Title</label><br>
-            <input type="text" name="title" id="label_title2" value="<?= $tableauD->disc_title ?>">
+            <label for="title">Title</label><br>
+            <input type="text" name="title" value="<?=$tableauD->disc_title?>">
             <br><br>
 
-            <label for="label_artist2">Artist</label><br>
-            <input type="text" name="artist" id="label_artist2" value="<?= $tableauD->artist_name ?>">
+            <label for="artist">Artist</label><br>
+            <input type="text" name="artist" value="<?=$tableauD->artist_name?>">
             <br><br>
 
-            <label for="label_year2">Year</label><br>
-            <input type="text" name="year" id="label_year2" value="<?= $tableauD->disc_year ?>">
+            <label for="year">Year</label><br>
+            <input type="text" name="year" value="<?=$tableauD->disc_year?>">
             <br><br>
 
-            <label for="label_genre2">Genre</label><br>
-            <input type="text" name="genre" id="label_genre2" value="<?= $tableauD->disc_genre ?>">
+            <label for="genre">Genre</label><br>
+            <input type="text" name="genre" value="<?=$tableauD->disc_genre?>">
             <br><br>
 
-            <label for="label_label2">Label</label><br>
-            <input type="text" name="label" id="label_label2" value="<?= $tableauD->disc_label ?>">
+            <label for="label">Label</label><br>
+            <input type="text" name="label" value="<?=$tableauD->disc_label?>">
             <br><br>
 
-            <label for="label_price2">Price</label><br>
-            <input type="text" name="price" id="label_price2" value="<?= $tableauD->disc_price ?>">
+            <label for="price">Price</label><br>
+            <input type="text" name="price" value="<?=$tableauD->disc_price?>">
             <br><br>
 
-            <p>Picture</p>
+            <label for="picture">Picture</label>
+            <input type="file" name="picture" id="picture">
 
             <img src="img/<?=$tableauD->disc_picture?>" class="img-fluid rounded-start mt-" alt="...">
+
 
             <br><br>
 
             <div class="d-flex justify-content-center">
-            <a href="disc_form.php" class="btn btn-rose m-2">Modifier</a>
+            <input type="submit" class="btn btn-rose m-2" value="Modifier">
             <a href="disc_detail.php?id=<?= $tableauD->disc_id?>" class="btn btn-rose m-2">Retour</a>
             </div>
             <br><br>

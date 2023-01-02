@@ -13,7 +13,7 @@
     if ($id == Null) {
         header("Location: discs.php");
     }
-    elseif ($artist == Null || $year == Null || $title == Null || $genre == Null || $label == Null || $price == Null || $picture == Null) {
+    elseif ($artist == Null || $year == Null || $title == Null || $genre == Null || $label == Null || $price == Null) {
         header("Location: disc_form.php?id=".$id);
         exit;
     }
@@ -32,10 +32,10 @@
         $requete->bindValue(":title", $title, PDO::PARAM_STR);
         $requete->bindValue(":artist", $artist, PDO::PARAM_STR);
         $requete->bindValue(":year", $year, PDO::PARAM_INT);
-        $requete->bindValue(":genre", $genre, PDO::PARAM_INT);
-        $requete->bindValue(":label", $labe, PDO::PARAM_INT);
-        $requete->bindValue(":price", $price, PDO::PARAM_INT);
-        $requete->bindValue(":picture", $picture, PDO::PARAM_INT);
+        $requete->bindValue(":genre", $genre, PDO::PARAM_STR);
+        $requete->bindValue(":label", $label, PDO::PARAM_STR);
+        $requete->bindValue(":price", $price, PDO::PARAM_STR);
+        $requete->bindValue(":picture", $picture, PDO::PARAM_STR);
 
         $requete->execute();
         $requete->closeCursor();
@@ -43,7 +43,7 @@
 
     catch (Exception $e) {
         echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
-        die("Fin du script (script_disc_modif.php)");
+//        die("Fin du script (script_disc_modif.php)");
     }
 
     // Si OK: redirection vers la page accueil

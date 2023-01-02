@@ -35,6 +35,17 @@
             <option value="<?= $disc->artist_id ?>"><?= $disc->artist_name ?></option>
         <?php endforeach; ?>
 
+        <!-- <option value="marillion">Marillion</option>
+        <option value="neil_young">Neil Young</option>
+        <option value="yes">YES</option>
+        <option value="rolling_stones">Rolling Stones</option>
+        <option value="queens_of_the_stone_age">Queens of the Stone Age</option>
+        <option value="serge_gainsbourg">Serge Gainsbourg</option>
+        <option value="acdc">AC/DC</option>
+        <option value="bob_dylan">Bob Dylan</option>
+        <option value="fleshtones">Fleshtones</option>
+        <option value="the_clash">The Clash</option> -->
+
         </select>
         <br><br>
 
@@ -47,7 +58,7 @@
         <br><br>
 
         <label for="label_label">Label</label><br>
-        <input type="text" name="label" id="label_label" placeholder="Enter label(EMI, Warner, PolyGram, Univers sale ...)">
+        <input type="text" name="label" id="label_label" placeholder="Enter label (EMI, Warner, PolyGram, Univers sale ...)">
         <br><br>
 
         <label for="label_price">Price</label><br>

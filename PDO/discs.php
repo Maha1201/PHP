@@ -32,7 +32,7 @@
                 <div class="card mb-3 border-0" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="img/<?=$disc->disc_picture?>" class="img-fluid rounded-start mt-4" alt="...">
+                            <img src="img/<?=$disc->disc_picture?>" class="img-fluid rounded-start mt-4" alt="Image en théorie">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">

@@ -3,12 +3,9 @@
     $db = connexionBase();
 
     $id = $_GET["id"];
-
-    $requete = $db->prepare("SELECT * FROM disc JOIN artist ON disc.artist_id = artist.artist_id WHERE disc.disc_id=?");
+    $requete = $db->prepare("SELECT * FROM disc JOIN artist ON disc.artist_id = artist.artist_id WHERE disc_id=?");
     $requete->execute(array($id));
-
     $tableauD = $requete->fetch(PDO::FETCH_OBJ);
-
     $requete->closeCursor();
 ?>
 
@@ -37,7 +34,7 @@
     <div class="d-flex justify-content-center">
         <form action ="" method="post">
 
-            <input type="hidden" name="id" value="<?= $tableauD->artist_id ?>">
+            <input type="hidden" name="id" value="<?= $tableauD->disc_id ?>">
 
             <label for="label_title2">Title</label><br>
             <input type="text" name="title" id="label_title2" value=" <?= $tableauD->disc_title ?>" disabled>
@@ -71,7 +68,7 @@
 
             <div class="d-flex justify-content-center">
             <a href="disc_form.php?id=<?= $tableauD->disc_id?>" class="btn btn-rose m-2">Modifier</a>
-            <a href="disc_form.php" class="btn btn-rose m-2">Supprimer</a>
+            <a href="script_disc_delete.php?id=<?= $tableauD->disc_id?>" class="btn btn-rose m-2">Supprimer</a>
             <a href="discs.php" class="btn btn-rose m-2">Annuler</a>
             </div>
             <br><br>
