@@ -32,7 +32,7 @@
         <select name="artist" id="label_artist">
 
         <?php foreach ($tableauD as $disc): ?>
-            <option value="<?= $disc->artist_id ?>"><?= $disc->artist_name ?></option>
+            <option value="<?= $disc->artist_name ?>"><?= $disc->artist_name ?></option>
         <?php endforeach; ?>
 
         <!-- <option value="marillion">Marillion</option>

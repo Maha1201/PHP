@@ -7,13 +7,31 @@
     $genre = (isset($_POST['genre']) && $_POST['genre'] != "") ? $_POST['genre'] : Null;
     $label = (isset($_POST['label']) && $_POST['label'] != "") ? $_POST['label'] : Null;
     $price = (isset($_POST['price']) && $_POST['price'] != "") ? $_POST['price'] : Null;
-    $picture = (isset($_POST['picture']) && $_POST['picture'] != "") ? $_POST['picture'] : Null;
+    //$picture = (isset($_POST['picture']) && $_POST['picture'] != "") ? $_POST['picture'] : Null;
+
+
+    //if(isset($_FILES['file'])){
+    //    $tmpName = $_FILES['file']['tmp_name'];
+    //    $name = $_FILES['file']['name'];
+    //}
+    //move_uploaded_file($tmpName,'./img/'.$name);
+
+    $uploads_dir = 'img/';
+    $name = $_FILES["file"]["name"];
+
+    if (move_uploaded_file($tmp_name, "$uploads_dir/$name")) {
+        print "Uploaded successfully!";
+    } else {
+        print "Upload failed!";
+    }
+
+
 
     // En cas d'erreur, on renvoie vers le formulaire
     if ($id == Null) {
         header("Location: discs.php");
     }
-    elseif ($artist == Null || $year == Null || $title == Null || $genre == Null || $label == Null || $price == Null) {
+    elseif ($artist == Null || $year == Null || $title == Null || $genre == Null || $label == Null || $price == Null || $picture == Null) {
         header("Location: disc_form.php?id=".$id);
         exit;
     }
@@ -43,7 +61,7 @@
 
     catch (Exception $e) {
         echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
-//        die("Fin du script (script_disc_modif.php)");
+        die("Fin du script (script_disc_modif.php)");
     }
 
     // Si OK: redirection vers la page accueil

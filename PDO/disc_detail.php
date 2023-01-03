@@ -62,7 +62,7 @@
 
             <p>Picture</p>
 
-            <img src="img/<?=$tableauD->disc_picture?>" class="img-fluid rounded-start mt-" alt="...">
+            <img src="img/<?=$tableauD->disc_picture?>" class="img-fluid rounded-start mt-" alt="Image">
 
             <br><br>
 

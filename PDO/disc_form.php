@@ -62,13 +62,15 @@
             <label for="picture">Picture</label>
             <input type="file" name="picture" id="picture">
 
-            <img src="img/<?=$tableauD->disc_picture?>" class="img-fluid rounded-start mt-" alt="...">
+            <br><br>
+
+            <img src="img/<?=$tableauD->disc_picture?>" class="img-fluid rounded-start mt-" alt="Image">
 
 
             <br><br>
 
             <div class="d-flex justify-content-center">
-            <input type="submit" class="btn btn-rose m-2" value="Modifier">
+            <input type="submit" class="btn btn-rose m-2 col-2" value="Modifier">
             <a href="disc_detail.php?id=<?= $tableauD->disc_id?>" class="btn btn-rose m-2">Retour</a>
             </div>
             <br><br>
