@@ -22,7 +22,7 @@
 
 <div class="container">
     <div class="row p-3">
-        <h1 class="col-10">Liste des disques (15)</h1>
+        <h1 class="col-10">Liste des disques (17)</h1>
         <a href="disc_new.php" class="btn btn-rose col-1">Ajouter</a>
     </div>
 
